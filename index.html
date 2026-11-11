@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clipping web pages into a Markdown research vault</title>
+<meta name="description" content="A research workflow for saving web articles and docs pages as clean Markdown: what to keep, how to cite, and when to save raw HTML instead.">
+<meta name="robots" content="index,follow">
+<style>body{font:16px/1.6 -apple-system,Segoe UI,Helvetica,Arial,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px;color:#1f2328}header{border-bottom:1px solid #d0d7de;margin-bottom:24px}h1{font-size:28px}h2{border-bottom:1px solid #eaeef2;padding-bottom:4px;margin-top:28px}code{background:#eff1f3;padding:2px 5px;border-radius:4px;font-size:90%}pre{background:#f6f8fa;padding:14px;border-radius:6px;overflow:auto}table{border-collapse:collapse;margin:12px 0}td,th{border:1px solid #d0d7de;padding:6px 12px}a{color:#0969da}footer{margin-top:40px;color:#59636e;font-size:14px}</style></head>
+<body><header><h1>Clipping web pages into a Markdown research vault</h1></header>
+<main>
+<p>If you keep notes in Obsidian, Logseq or a plain Git repo, the web pages you read are part of your research too: a blog post, an API docs page, a long-form article. Bookmarks rot and browser tabs pile up. A Markdown copy, with the source URL at the top, stays searchable for years. This is the clipping routine I use.</p>
+<h2>Why not just copy and paste?</h2>
+<p>Copying from the rendered page drags in navigation, cookie banners and "related posts", and it flattens headings into bold text. Converting from the URL works better: fetch the page, find the main content and turn its HTML structure into Markdown. The <a href="https://dochost.io/url-to-markdown">URL to Markdown converter</a> on dochost fetches a public page and returns GitHub-flavored Markdown with the headings, links, lists and tables intact.</p>
+<h2>The clipping template</h2>
+<pre><code>---
+title: Original title
+source: https://example.com/article
+author: Name
+published: 2026-10-02
+clipped: 2026-11-11
+tags: [topic, project]
+---
+&gt; One-sentence reason I saved this.
+
+(converted article)</code></pre>
+<h2>What to keep and what to cut</h2>
+<ul>
+<li><strong>Keep</strong>: headings, code blocks, tables, and links that are part of the argument.</li>
+<li><strong>Cut</strong>: share buttons, newsletter boxes, comments, "you might also like".</li>
+<li><strong>Images</strong>: keep the remote URLs only for diagrams you need, and download the important ones, because remote images break too.</li>
+</ul>
+<h2>Cite properly</h2>
+<p>When you quote a clipped page in your own writing, link the original URL, not your copy. Your Markdown file is a reading copy, not a republication. Keep clippings private unless the license allows sharing.</p>
+<h2>When you need the raw HTML instead</h2>
+<p>Sometimes the Markdown loses what you came for: a page's exact markup, its meta tags or structured data. For those cases, <a href="https://dochost.io/url-to-html">URL to HTML</a> returns the page's HTML source so you can save or inspect it.</p>
+<h2>Weekly maintenance</h2>
+<ol><li>Process the inbox folder: tag each clipping or delete it.</li><li>Add a link from at least one of your own notes. An unlinked clipping is a dead clipping.</li><li>Re-check sources you rely on, since docs pages change. Note the clipped date.</li></ol>
+</main>
+<footer>Practical notes on document formats. Last updated November 2026. Tools mentioned are free browser tools from dochost.</footer>
+</body></html>
